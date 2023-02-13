@@ -20,7 +20,7 @@ public class QuranCla
 
     public QuranCla()
     {
-        
+
     }
 
     public QuranCla(int number, String ayat, String noInSurah, String juz, String manzil, String page, String hizbQuater, String sajda, String surahNo, String surahName, String englishName, String englishNameTranslation, String revealationType, String translation, String tafseer) {
