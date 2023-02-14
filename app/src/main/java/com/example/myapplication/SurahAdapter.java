@@ -43,6 +43,7 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.viewHolder> 
             {
                 // is ma hum us ki surah ki full detial show karin gay
                 Intent intent=new Intent(context,MainActivity5.class);
+                intent.putExtra("name",model.getValue());
                 context.startActivity(intent);
             }
         });
