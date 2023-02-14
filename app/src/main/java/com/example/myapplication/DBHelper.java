@@ -64,6 +64,29 @@ public class DBHelper extends SQLiteOpenHelper
         mydb.close();
         return list;
     }
+    public ArrayList<CompleteSurah> getSurah(String name){
+        openDatabase();
+        ArrayList<CompleteSurah> list=new ArrayList<>();
+        SQLiteDatabase mydb=this.getWritableDatabase();
+        Cursor cursor=mydb.rawQuery("select text,numberInSurah,UrduTranslation from QuranMetaData_Sheet1 WHERE surah_name=?",new String[]{name});
+        if(cursor.moveToFirst())
+        {
+            while(cursor.moveToNext())
+            {
+                CompleteSurah s=new CompleteSurah();
+                s.setText(cursor.getString(0));
+                s.setNumber(cursor.getString(1));
+                s.setTranslation(cursor.getString(2));
+
+
+                list.add(s);
+            }
+        }
+        cursor.close();
+        mydb.close();
+        return list;
+    }
+
 
     public ArrayList<String> getAllParah(){
         openDatabase();

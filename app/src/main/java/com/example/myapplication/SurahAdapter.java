@@ -23,6 +23,8 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.viewHolder> 
         this.context = context;
     }
 
+
+
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
