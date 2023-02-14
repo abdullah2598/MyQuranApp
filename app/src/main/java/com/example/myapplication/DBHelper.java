@@ -88,17 +88,18 @@ public class DBHelper extends SQLiteOpenHelper
     }
 
 
-    public ArrayList<String> getAllParah(){
+    public ArrayList<AyatSurahcla> getAllParah(){
         openDatabase();
-        ArrayList<String> list=new ArrayList<>();
+        ArrayList<AyatSurahcla> list=new ArrayList<>();
         SQLiteDatabase mydb=this.getWritableDatabase();
         Cursor cursor=mydb.rawQuery("select DISTINCT juz from QuranMetaData_Sheet1",null);
         if(cursor.moveToFirst())
         {
             while(cursor.moveToNext())
             {
-                // Toast.makeText(myContext, cursor.getString(0), Toast.LENGTH_SHORT).show();
-                list.add(cursor.getString(0));
+                AyatSurahcla ayatSurahcla=new AyatSurahcla();
+                ayatSurahcla.setValue(cursor.getString(0));
+                list.add(ayatSurahcla);
             }
         }
         cursor.close();
