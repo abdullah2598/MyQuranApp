@@ -42,8 +42,8 @@ public class ParahAdapter extends RecyclerView.Adapter<ParahAdapter.viewHolder> 
             @Override
             public void onClick(View view)
             {
-                Intent intent=new Intent(context,MainActivity5.class);
-                intent.putExtra("name",model.getValue());
+                Intent intent=new Intent(context,MainActivity.class);
+                intent.putExtra("parano",model.getValue());
                 context.startActivity(intent);
             }
         });
